@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize('plantkeeper', 'root', 'root', {
-  host: 'localhost',
+  host: 'localhost',  
   dialect: 'mysql',
 });
 

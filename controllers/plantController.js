@@ -33,3 +33,25 @@ exports.deletePlant = async (req, res) => {
     }
   };
   
+
+  // plantController.js
+
+exports.updatePlant = async (req, res) => {
+  try {
+    const plantId = req.params.id;
+    const updatedPlant = await Plant.update(req.body, {
+      where: { id: plantId },
+      returning: true,
+      plain: true
+    });
+    
+    if (!updatedPlant[1]) {
+      return res.status(404).json({ error: 'Planta no encontrada' });
+    }
+
+    res.status(200).json(updatedPlant[1]);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+

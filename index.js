@@ -30,6 +30,6 @@ sequelize.sync().then(() => {
   console.log('Base de datos sincronizada');
   const PORT = 3000;
   app.listen(PORT, () => {
-    console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+    console.log(`Servidor ejecutándose en http://52.5.85.140:${PORT}`);
   });
 });
